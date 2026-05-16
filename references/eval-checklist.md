@@ -6,6 +6,7 @@
 ## 실행 가능성
 
 - [ ] `python3 analyze.py` 실행 시 오류 없이 `result.md`가 생성된다.
+- [ ] `python3 analyze.py --budget 350000 --output result.md`처럼 예산 옵션을 바꿔도 실행된다.
 - [ ] 외부 패키지 설치 없이 Python 표준 라이브러리만으로 실행된다.
 - [ ] `orders.csv`가 UTF-8 CSV로 로드된다.
 - [ ] 주문 데이터 25건이 정상적으로 읽힌다.
@@ -14,7 +15,11 @@
 
 - [ ] `result.md`에 총 식비 섹션이 포함된다.
 - [ ] `result.md`에 주문 습관 섹션이 포함된다.
+- [ ] `result.md`에 음식 카테고리 분석 섹션이 포함된다.
 - [ ] `result.md`에 요일 패턴 섹션이 포함된다.
+- [ ] `result.md`에 월별 비교 섹션이 포함된다.
+- [ ] `result.md`에 절약 목표 섹션이 포함된다.
+- [ ] `result.md`에 절약 인사이트 섹션이 포함된다.
 - [ ] 가장 많이 주문한 음식점, 앱별 이용 현황, 최애 메뉴가 표시된다.
 - [ ] mock data 기반 결과임을 명시한다.
 
@@ -53,7 +58,11 @@ assert all(k in rows[0] for k in ["주문일시", "앱", "음식점", "메뉴", 
 content = open("result.md", encoding="utf-8").read()
 assert "💰 이번달 식비" in content
 assert "🍜 주문 습관" in content
+assert "🏷️ 음식 카테고리 분석" in content
 assert "📅 요일 패턴" in content
+assert "📈 월별 비교" in content
+assert "🎯 절약 목표" in content
+assert "🧭 절약 인사이트" in content
 assert "mock data" in content
 
 print("eval checklist passed")
